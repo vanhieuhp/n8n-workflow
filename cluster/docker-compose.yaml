@@ -1,0 +1,27 @@
+name: "n8n"
+
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:1.70.1
+    container_name: n8n
+    restart: always
+    ports:
+      - "5678:5678"
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./etc_hosts:/etc/hosts
+    networks:
+      - network1
+    env_file:
+      - .env
+
+
+volumes:
+  n8n_data:
+    name: n8n_data
+    driver: local
+
+networks:
+  network1:
+    name: docker_network
+    external: true # Use the default bridge network
