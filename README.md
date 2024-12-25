@@ -1,8 +1,10 @@
 ## Setup n8n and mysql
 
 1. n8n admin account
+```
 username: hieu.n@glasshouseventure.studio
 password: vQ6jJnFy3guO5S
+```
 
 2. Create user n8n for postgreSQL database
 ```
